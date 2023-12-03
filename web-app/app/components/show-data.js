@@ -10,9 +10,9 @@ export default class ShowDataComponent extends Component {
     constructor() {
       //data = this.storage.fetchData();
       super(...arguments);
-      this.getData();
+      //this.getData();
       this.getTopics("Karate");
-      this.getQuizQuestions("Karate");
+      //this.getQuizQuestions("Karate");
 
     }
 

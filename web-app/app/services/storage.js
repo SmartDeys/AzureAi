@@ -8,7 +8,6 @@ export default class StorageService extends Service {
   async fetchData(url, data) {
     // const url = 'http://localhost:5130/api/getGameData/';
 
-    var senValue = "userPrompt=" + searchValue;
     return $.ajax({
       url: url,
       method: 'GET',

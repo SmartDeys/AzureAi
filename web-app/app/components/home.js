@@ -8,9 +8,16 @@ import { tracked } from '@glimmer/tracking';
 export default class HomeComponent extends Component {
     @tracked isSearched=false;
     @tracked serachValue = '';
+    @tracked data=undefined;
 
     @service
     storage
+
+    constructor(){
+      super(...arguments);
+      //this.getData();
+      this.getTopics("Karate");
+    }
 
     @computed("serachValue")
     get isSearhed(){
@@ -18,17 +25,30 @@ export default class HomeComponent extends Component {
     }
 
     @action
-    triggerSearch() {
-      debounce(this, 'getSearch', 1500);
+    async selectOption(userPrompt){
+      var url = "http://localhost:5130/api/getGameData/";
+      // userPrompt = "Karate";
+      var prompt = "selectedTopic=" + userPrompt;
+        await this.storage.fetchData(url,prompt);
+        this.data = this.storage.apiData;
     }
   
-    getSearch() {
+    @action
+    apply() {
       this.serachValue = $('#serachId').val();
       console.log("serachde text",this.serachValue);
       if(this.serachValue.length >0)
-        this.storage.fetchData(this.serachValue);
+        this.getTopics(this.serachValue);
       else{
-        this.storage.fetchData();
+        this.getTopics("Karate");
       }
+    }
+
+    async getTopics(userPrompt){
+      var url = "http://localhost:5130/api/getTopics/";
+      // userPrompt = "Karate";
+      var prompt = "userPrompt=" + userPrompt;
+        await this.storage.fetchData(url,prompt);
+        this.data = this.storage.apiData;
     }
 }

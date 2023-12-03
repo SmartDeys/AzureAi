@@ -38,9 +38,28 @@
 }
 .recomendOption{
   display: inline-block;
-  padding: 10px; 
-  margin: 5px;
+  padding: 10px; /* Adjust the padding as needed */
+  margin: 5px; /* Adjust the margin to control the gap between boxes */
   background-color: lightblue;
-  border-radius: 10px; 
-  min-width: 50px; 
+  border-radius: 10px; /* Adjust the border-radius for rounded corners */
+  min-width: 50px; /* Set a minimum width */
+  transition: box-shadow 0.3s ease; /* Add a smooth transition effect for the shadow */
+}
+
+.recomendOption:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the shadow values as needed */
+}
+
+.applyButton {
+  padding: 10px 15px; /* Adjust padding as needed */
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px; /* Adjust the border-radius for rounded corners */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect for the background color */
+}
+
+.applyButton:hover {
+  background-color: darkblue; /* Adjust the background color on hover */
 }
