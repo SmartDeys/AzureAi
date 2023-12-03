@@ -1,1 +1,38 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+.question{
+    font-family: system-ui;
+    background: #f7fbff;
+
+    .option{
+        padding: 10px;
+        background: #cad8ff52;
+        /* border: #ffffff solid 5px; */
+        border-radius: 10px;
+        padding-left: 41px;
+        margin: 8px;
+    }
+    .questionDesc{
+        font-weight: bolder;
+        font-size: larger;
+        margin: 30px;
+    }
+    .selected{
+        background: #723492;
+        color: white;
+    }
+    .buttomFrame{
+        display: flex;
+        flex-direction: row-reverse;
+        margin-right: 30px;
+    }
+}
+.button{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 13px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
