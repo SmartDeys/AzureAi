@@ -3,15 +3,15 @@
     <QuizComp @questionData={{this.gameData}}/>
 {{else}}
     <div class="search">
-    <input id="serachId" class = "serachId">
-        <span class="applyButton" onclick={{action "apply"}}>
+    <input id="serachId" class = "serachId" onkeyup={{action "storeText"}}>
+        <button class="applyButton" disabled={{this.disable}} onclick={{action "apply"}}>
         {{#if this.getTopics.isIdle}}
             Ask
         {{else}}
             Thinking.....
             <span class="loading-dot-circle"></span>
         {{/if}}
-        </span>
+        </button>
     </div>
 <div class="possibletopics">
     {{#if this.selected.isIdle}}

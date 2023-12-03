@@ -64,6 +64,10 @@
 .button:hover{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.button:disabled{
+  background-color: lightgreen;
+  cursor: not-allowed;
+}
 .possibletopics{
     text-align: center;
 }
@@ -92,22 +96,47 @@
 }
 
 .applyButton {
-    height: 2.2vh;
+    height: 7.4vh;
     border-radius: 0;
     margin-left: -3px;
     padding: 20px 18px;
     background-color: #f67117;
-    width: 30px;
+    width: 90px;
   transition: background-color 0.3s ease; /* Add a smooth transition effect for the background color */
 }
 
 .applyButton:hover {
-  background-color: darkblue; /* Adjust the background color on hover */
+  background-color: rgb(28, 28, 156); /* Adjust the background color on hover */
 }
-
 .applyButton:disabled{
+  background-color: #f0b994;
   cursor: not-allowed;
-  background-color: lightgrey;
+}
+.showReportCard{
+  margin: 53px;
+  background: aliceblue;
+  .progress{
+      border-radius: 5px;
+      margin: 5px;
+      padding: 10px;
+      .givenQn{
+          font: bolder;
+      }
+      .selectedAnswer{
+          padding: 5px;
+      }
+      .correctAnswer{
+          padding: 5px;
+      }
+  }
+}
+.correct{
+  border: #3bc277 solid 2px;
+  background: #f5f9f5;
+}
+.wrong{
+  border: #eea9a9 solid 2px;
+  background: #ffe8e8;
 }
 
 /* Define the animation keyframes */
