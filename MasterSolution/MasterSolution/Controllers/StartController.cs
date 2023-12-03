@@ -20,5 +20,11 @@ namespace MasterSolution.Controllers
         {
             return Storage.GetValue();
         }
+        [AcceptVerbs("GET")]
+        [Route("api/getTopics")]
+        public async Task<Dictionary<string, object>> Get(string userPrompt)
+        {
+            return await QuizBot.GetTopicsByPromtAsync(userPrompt);
+        }
     }
 }
