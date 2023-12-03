@@ -6,7 +6,7 @@
     {{/each}}
 </div>
 <div class="buttomFrame">
-<button class="next button" onclick={{action this.onMoveNext }}>{{if this.args.isLast "Submit" "Next" }}</button>
+<button class="next button" onclick={{action this.onMoveNext }} disabled={{this.isDisable}}>{{if this.args.isLast "Submit" "Next" }}</button>
 </div>
 </div>
 {{yield}}

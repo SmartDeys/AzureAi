@@ -9,6 +9,10 @@
         border-radius: 10px;
         padding-left: 41px;
         margin: 8px;
+        cursor: pointer;
+    }
+    .option:hover{
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
     .questionDesc{
         font-weight: bolder;
@@ -40,11 +44,15 @@
 .button:hover{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.button:disabled{
+  background-color: lightgreen;
+  cursor: not-allowed;
+}
 .recomendOption{
   display: inline-block;
   padding: 10px; /* Adjust the padding as needed */
   margin: 5px; /* Adjust the margin to control the gap between boxes */
-  background-color: lightblue;
+  background-color: rgb(20 182 236);
   border-radius: 10px; /* Adjust the border-radius for rounded corners */
   min-width: 50px; /* Set a minimum width */
   transition: box-shadow 0.3s ease; /* Add a smooth transition effect for the shadow */
@@ -57,7 +65,7 @@
 
 .applyButton {
   padding: 10px 15px; /* Adjust padding as needed */
-  background-color: lightblue;
+  background-color: #04AA6D;
   border: none;
   border-radius: 5px; /* Adjust the border-radius for rounded corners */
   color: white;
@@ -67,6 +75,11 @@
 
 .applyButton:hover {
   background-color: darkblue; /* Adjust the background color on hover */
+}
+
+.applyButton:disabled{
+  cursor: not-allowed;
+  background-color: lightgrey;
 }
 
 /* Define the animation keyframes */
@@ -94,4 +107,11 @@
   border-radius: 50%;
   margin: 0 5px; /* Adjust the spacing between dots */
   animation: loading 1s infinite ease-in-out; /* Adjust the animation duration as needed */
+}
+
+.disabled-button {
+  cursor:not-allowed;
+  background-color: lightgray;
+  color: darkgray;
+  border-radius: 5px;
 }

@@ -8,7 +8,7 @@ import { dropTask } from 'ember-concurrency';
 
 export default class HomeComponent extends Component {
     @tracked isSearched = false;
-    @tracked serachValue = '';
+    @tracked searchValue = '';
     @tracked data = null;
     @tracked gameData = null;
     @tracked showTopics=true;
@@ -23,9 +23,9 @@ export default class HomeComponent extends Component {
        this.getTopics.perform("Karate");
     }
 
-    @computed("serachValue")
-    get isSearhed(){
-        return (this.serachValue.length > 0)
+    @computed("searchValue")
+    get disable(){
+        return (this.searchValue.length == 0)
     }
 
     @action
@@ -34,6 +34,10 @@ export default class HomeComponent extends Component {
       console.log("awiteddd");
     }
 
+    @action
+    storeText(){
+      this.searchValue=$('#serachId').val();
+    }
 
     @dropTask
     *selected(userPrompt){
@@ -51,10 +55,10 @@ export default class HomeComponent extends Component {
   
     @action
     async apply() {
-      this.serachValue = $('#serachId').val();
-      console.log("serachde text",this.serachValue);
-      if(this.serachValue.length >0){
-        await this.getTopics.perform(this.serachValue);
+      this.searchValue = $('#serachId').val();
+      console.log("serachde text",this.searchValue);
+      if(this.searchValue.length >0){
+        await this.getTopics.perform(this.searchValue);
         // this.showQuestionPage = true;
       }
       else{

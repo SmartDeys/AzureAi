@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { action, set } from '@ember/object';
+import { action, set , computed} from '@ember/object';
 import { helper } from '@ember/component/helper';
 
 export default class QuizQaComponent extends Component {
@@ -14,6 +14,10 @@ export default class QuizQaComponent extends Component {
     this.options =  this.args.model?.Options;
     
 
+    }
+    @computed("selectedAnswer")
+    get isDisable(){
+      return (this.selectedAnswer.length == 0)
     }
 
 @action
@@ -30,5 +34,6 @@ export default class QuizQaComponent extends Component {
     onMoveNext(){
         var result = this.selectedAnswer == this.args.model.Answer;
         this.args.onChangePoint(result , this.selectedAnswer);
+        this.selectedAnswer="";
     }
 }

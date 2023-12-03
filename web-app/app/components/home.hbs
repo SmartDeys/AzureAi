@@ -1,13 +1,13 @@
 {{#if this.showTopics}}
-<input id="serachId">
-<span class="applyButton" onclick={{action "apply"}}>
+<input id="serachId" onkeyup={{action "storeText"}}>
+<button class="applyButton" onclick={{action "apply"}} disabled={{this.disable}}>
     {{#if this.getTopics.isIdle}}
         Ask
     {{else}}
         Thinking.....
         <span class="loading-dot-circle"></span>
     {{/if}}
-</span>
+</button>
 {{#if this.selected.isIdle}}
     {{#each this.data.Topics as |data|}}
         <div class="recomendOption" onclick={{action "selectOption" data}}>
