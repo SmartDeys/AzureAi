@@ -6,17 +6,18 @@ import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 export default class HomeComponent extends Component {
-    @tracked isSearched=false;
+    @tracked isSearched = false;
     @tracked serachValue = '';
-    @tracked data=undefined;
-
+    @tracked data = null;
+    @tracked gameData = null;
+    // @tracked showQuestionPage = false;
     @service
     storage
 
     constructor(){
       super(...arguments);
       //this.getData();
-      this.getTopics("Karate");
+      // this.getTopics("Karate");
     }
 
     @computed("serachValue")
@@ -30,17 +31,23 @@ export default class HomeComponent extends Component {
       // userPrompt = "Karate";
       var prompt = "selectedTopic=" + userPrompt;
         await this.storage.fetchData(url,prompt);
-        this.data = this.storage.apiData;
+        var tempGameData = this.storage.apiData;
+        tempGameData.forEach(data => {
+          data.Options=JSON.parse(data.optionJson);
+        });
+        this.gameData = tempGameData;
     }
   
     @action
-    apply() {
+    async apply() {
       this.serachValue = $('#serachId').val();
       console.log("serachde text",this.serachValue);
-      if(this.serachValue.length >0)
-        this.getTopics(this.serachValue);
+      if(this.serachValue.length >0){
+        await this.getTopics(this.serachValue);
+        // this.showQuestionPage = true;
+      }
       else{
-        this.getTopics("Karate");
+        this.getTopics("Any common topics for college student");
       }
     }
 

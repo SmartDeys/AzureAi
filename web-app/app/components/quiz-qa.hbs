@@ -2,12 +2,11 @@
 <div class="questionDesc">{{this.args.model.Question}}</div>
 <div class="optionsList">
     {{#each this.args.model.Options as |option index|}}
-    {{log  index}}
-<div class={{concat "option " (if (this.isSelected this.selectedAnswer option) " selected" " no")}} onclick={{action this.selectOption option}}>{{option}}</div>
+        <div class={{concat "option " (if (this.isSelected this.selectedAnswer option) " selected" " no")}} onclick={{action this.selectOption option}}>{{option}}</div>
     {{/each}}
 </div>
 <div class="buttomFrame">
-<button class="next button" onclick={{action this.onMoveNext }}>Next</button>
+<button class="next button" onclick={{action this.onMoveNext }}>{{if this.args.isLast "Submit" "Next" }}</button>
 </div>
 </div>
 {{yield}}

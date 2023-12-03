@@ -1,3 +1,16 @@
-{{log "questiondata=" this.questionData}}
-<QuizQa @model={{this.currentQuestion}} @onChangePoint ={{action this.onChangePoint}}/>
+Hii
+{{#if this.showQuestion}}
+<QuizQa @model={{this.currentQuestion}} @onChangePoint ={{action this.onChangePoint}} @isLast = {{this.isLast}}/>
+{{/if}}
+{{#if this.showReportcard}}
+    <div class="showReportCard">
+        {{#each this.reportCard as |item|}}
+        <div class={{concat "progress " (if (this.isCorrectAnswer item.SelectedAnswer item.CorrectAnswer) "correct" "wrong")}}>
+            <div class="givenQn">{{item.Question}}</div>
+            <div class="selectedAnswer">{{item.SelectedAnswer}}</div>
+            <div class="correctAnswer">{{item.CorrectAnswer}}</div>
+        </div>
+        {{/each}}
+    </div>
+{{/if}}
 {{yield}}

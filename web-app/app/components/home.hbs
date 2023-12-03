@@ -2,6 +2,8 @@
 {{#each this.storage.apiData.Topics as |data|}}
     <div class="recomendOption" onclick={{action "selectOption" data}}>{{data}}</div>
 {{/each}}
-<QuizComp questionData={{this.data}}/>
+{{#if this.gameData}}
+    <QuizComp @questionData={{this.gameData}}/>
+{{/if}}
 {{!-- <ShowData/> --}}
 {{yield}}
