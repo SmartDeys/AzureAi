@@ -1,11 +1,13 @@
 import Service from '@ember/service';
 import $ from 'jquery';
 import { tracked } from '@glimmer/tracking';
+import { dropTask } from 'ember-concurrency';
 
 export default class StorageService extends Service {
   @tracked apiData = null;
 
-  async fetchData(url, data) {
+  @dropTask
+  *fetchData(url, data) {
     // const url = 'http://localhost:5130/api/getGameData/';
 
     return $.ajax({
