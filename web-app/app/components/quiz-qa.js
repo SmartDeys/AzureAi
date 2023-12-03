@@ -10,8 +10,8 @@ export default class QuizQaComponent extends Component {
     constructor(owner, args) {
         super(owner, args);
     console.log(this.args.model);
-    this.question =  this.args.model.Question;
-    this.options =  this.args.model.Options;
+    this.question =  this.args.model?.Question;
+    this.options =  this.args.model?.Options;
     
 
     }
@@ -29,6 +29,6 @@ export default class QuizQaComponent extends Component {
     @action
     onMoveNext(){
         var result = this.selectedAnswer == this.args.model.Answer;
-        this.args.onChangePoint(result);
+        this.args.onChangePoint(result , this.selectedAnswer);
     }
 }
