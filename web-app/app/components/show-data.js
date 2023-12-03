@@ -11,10 +11,30 @@ export default class ShowDataComponent extends Component {
       //data = this.storage.fetchData();
       super(...arguments);
       this.getData();
+      this.getTopics("Karate");
+      this.getQuizQuestions("Karate");
+
     }
 
-    async getData(){
-        await this.storage.fetchData();
+    async getData(userPrompt){
+      var url = "http://localhost:5130/api/getGameData/";
+      userPrompt = "Karate";
+      var prompt = "selectedTopic=" + userPrompt;
+        await this.storage.fetchData(url,prompt);
+        this.data = this.storage.apiData;
+    }
+    async getQuizQuestions(userPrompt){
+      var url = "http://localhost:5130/api/getGameData/";
+      // userPrompt = "Karate";
+      var prompt = "selectedTopic=" + userPrompt;
+        await this.storage.fetchData(url,prompt);
+        this.data = this.storage.apiData;
+    }
+    async getTopics(userPrompt){
+      var url = "http://localhost:5130/api/getTopics/";
+      // userPrompt = "Karate";
+      var prompt = "userPrompt=" + userPrompt;
+        await this.storage.fetchData(url,prompt);
         this.data = this.storage.apiData;
     }
 }
