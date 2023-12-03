@@ -55,6 +55,13 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.possibletopics{
+    text-align: center;
 }
 .possibletopics{
     text-align: center;
@@ -73,6 +80,7 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .recomendOption:hover {
@@ -117,4 +125,31 @@
 .wrong{
     border: #eea9a9 solid 2px;
     background: #ffe8e8;
+}
+
+/* Define the animation keyframes */
+@keyframes loading {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+/* Apply the animation to the element with the loading-dot-circle class */
+.loading-dot-circle {
+  display: inline-block;
+}
+
+.loading-dot-circle::before {
+  content: '';
+  display: inline-block;
+  width: 10px; /* Adjust the width of the dot */
+  height: 10px; /* Adjust the height of the dot */
+  background-color: #333; /* Adjust the color of the dot */
+  border-radius: 50%;
+  margin: 0 5px; /* Adjust the spacing between dots */
+  animation: loading 1s infinite ease-in-out; /* Adjust the animation duration as needed */
 }
