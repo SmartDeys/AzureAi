@@ -1,24 +1,28 @@
-{{#if this.showTopics}}
-<input id="serachId" onkeyup={{action "storeText"}}>
-<button class="applyButton" onclick={{action "apply"}} disabled={{this.disable}}>
-    {{#if this.getTopics.isIdle}}
-        Ask
-    {{else}}
-        Thinking.....
-        <span class="loading-dot-circle"></span>
-    {{/if}}
-</button>
-{{#if this.selected.isIdle}}
-    {{#each this.data.Topics as |data|}}
-        <div class="recomendOption" onclick={{action "selectOption" data}}>
-                {{data}}
-        </div>
-    {{/each}}
-{{else}}
-<div class="loading-dot-circle"></div>
-{{/if}}
-{{/if}}
+<div class="homepage">
 {{#if this.gameData}}
     <QuizComp @questionData={{this.gameData}}/>
+{{else}}
+    <div class="search">
+    <input id="serachId" class = "serachId">
+        <span class="applyButton" onclick={{action "apply"}}>
+        {{#if this.getTopics.isIdle}}
+            Ask
+        {{else}}
+            Thinking.....
+            <span class="loading-dot-circle"></span>
+        {{/if}}
+        </span>
+    </div>
+<div class="possibletopics">
+    {{#if this.selected.isIdle}}
+        {{#each this.storage.apiData.Topics as |data|}}
+            <div class="recomendOption box-common" onclick={{action "selectOption" data}}>{{data}}</div>
+        {{/each}}
+    {{else}}
+        <div class="loading-dot-circle"></div>
+    {{/if}}
+</div>
 {{/if}}
+</div>
+{{!-- <ShowData/> --}}
 {{yield}}

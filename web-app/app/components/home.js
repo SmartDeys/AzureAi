@@ -62,7 +62,7 @@ export default class HomeComponent extends Component {
         // this.showQuestionPage = true;
       }
       else{
-        this.getTopics.perform("Any common topics for college student");
+        this.getTopics.perform("Any common topics for 18 years old boy/girl");
       }
     }
 

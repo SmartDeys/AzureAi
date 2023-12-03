@@ -1,6 +1,26 @@
+.homepage{
+    height: 100vh;
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    .search{
+        text-align: center;
+        padding-top: 20%;
+        .serachId{
+            height: 7vh;
+            width: 60vh;
+            font-size: 3vh;
+            outline: none;
+            border: none;
+    }
+    }
+}
 .question{
     font-family: system-ui;
     background: #f7fbff;
+    width: 170vh;
+    /* display: flex; */
+    margin: 37px;
+    border-radius: 10px;
+    margin-left: 77px;
 
     .option{
         padding: 10px;
@@ -44,19 +64,27 @@
 .button:hover{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.button:disabled{
-  background-color: lightgreen;
-  cursor: not-allowed;
+.possibletopics{
+    text-align: center;
+}
+.possibletopics{
+    text-align: center;
 }
 .recomendOption{
-  display: inline-block;
-  padding: 10px; /* Adjust the padding as needed */
-  margin: 5px; /* Adjust the margin to control the gap between boxes */
-  background-color: rgb(20 182 236);
-  border-radius: 10px; /* Adjust the border-radius for rounded corners */
-  min-width: 50px; /* Set a minimum width */
-  transition: box-shadow 0.3s ease; /* Add a smooth transition effect for the shadow */
-  cursor: pointer;
+    
+    margin: 10px;
+}
+.box-common{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 13px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .recomendOption:hover {
@@ -64,12 +92,12 @@
 }
 
 .applyButton {
-  padding: 10px 15px; /* Adjust padding as needed */
-  background-color: #04AA6D;
-  border: none;
-  border-radius: 5px; /* Adjust the border-radius for rounded corners */
-  color: white;
-  cursor: pointer;
+    height: 2.2vh;
+    border-radius: 0;
+    margin-left: -3px;
+    padding: 20px 18px;
+    background-color: #f67117;
+    width: 30px;
   transition: background-color 0.3s ease; /* Add a smooth transition effect for the background color */
 }
 

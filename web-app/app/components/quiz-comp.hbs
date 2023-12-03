@@ -3,6 +3,7 @@
 {{/if}}
 {{#if this.showReportcard}}
     <div class="showReportCard">
+<div class="totalcount">{{this.pointsComp}}/{{this.args.questionData.length}}</div>
         {{#each this.reportCard as |item|}}
         <div class={{concat "progress " (if (this.isCorrectAnswer item.SelectedAnswer item.CorrectAnswer) "correct" "wrong")}}>
             <div class="givenQn">{{item.Question}}</div>
