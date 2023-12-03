@@ -6,12 +6,12 @@ export default class StorageService extends Service {
   @tracked apiData = null;
 
   async fetchData() {
-    const url = 'http://localhost:5130/api/getTopics/';
+    const url = 'http://localhost:5130/api/getGameData/';
 
     return $.ajax({
       url: url,
       method: 'GET',
-      data: 'userPrompt=i wanted to learn .net',
+      data: 'selectedTopic=i wanted to learn .net',
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': 'http://localhost:4200', // Include the origin of your Ember app
