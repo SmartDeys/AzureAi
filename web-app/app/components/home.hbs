@@ -1,9 +1,16 @@
-<input id="serachId"><span class="applyButton" onclick={{action "apply"}}>Apply</span>
-{{#each this.storage.apiData.Topics as |data|}}
-    <div class="recomendOption" onclick={{action "selectOption" data}}>{{data}}</div>
-{{/each}}
+<div class="homepage">
 {{#if this.gameData}}
     <QuizComp @questionData={{this.gameData}}/>
+{{else}}
+    <div class="search">
+        <input id="serachId" class = "serachId"><span class="box-common applyButton " onclick={{action "apply"}}>Apply</span>
+    </div>
+<div class="possibletopics">
+    {{#each this.storage.apiData.Topics as |data|}}
+        <div class="recomendOption box-common" onclick={{action "selectOption" data}}>{{data}}</div>
+    {{/each}}
+</div>
 {{/if}}
+</div>
 {{!-- <ShowData/> --}}
 {{yield}}

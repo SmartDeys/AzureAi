@@ -1,6 +1,26 @@
+.homepage{
+    height: 100vh;
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    .search{
+        text-align: center;
+        padding-top: 20%;
+        .serachId{
+            height: 7vh;
+            width: 60vh;
+            font-size: 3vh;
+            outline: none;
+            border: none;
+    }
+    }
+}
 .question{
     font-family: system-ui;
     background: #f7fbff;
+    width: 170vh;
+    /* display: flex; */
+    margin: 37px;
+    border-radius: 10px;
+    margin-left: 77px;
 
     .option{
         padding: 10px;
@@ -36,14 +56,23 @@
     font-size: 16px;
     border-radius: 5px;
 }
+.possibletopics{
+    text-align: center;
+}
 .recomendOption{
-  display: inline-block;
-  padding: 10px; /* Adjust the padding as needed */
-  margin: 5px; /* Adjust the margin to control the gap between boxes */
-  background-color: lightblue;
-  border-radius: 10px; /* Adjust the border-radius for rounded corners */
-  min-width: 50px; /* Set a minimum width */
-  transition: box-shadow 0.3s ease; /* Add a smooth transition effect for the shadow */
+    
+    margin: 10px;
+}
+.box-common{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 13px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
 .recomendOption:hover {
@@ -51,15 +80,41 @@
 }
 
 .applyButton {
-  padding: 10px 15px; /* Adjust padding as needed */
-  background-color: lightblue;
-  border: none;
-  border-radius: 5px; /* Adjust the border-radius for rounded corners */
-  color: white;
-  cursor: pointer;
+    height: 2.2vh;
+    border-radius: 0;
+    margin-left: -3px;
+    padding: 20px 18px;
+    background-color: #f67117;
+    width: 30px;
   transition: background-color 0.3s ease; /* Add a smooth transition effect for the background color */
 }
 
 .applyButton:hover {
-  background-color: darkblue; /* Adjust the background color on hover */
+  background-color: rgb(28, 28, 156); /* Adjust the background color on hover */
+}
+.showReportCard{
+    margin: 53px;
+    background: aliceblue;
+    .progress{
+        border-radius: 5px;
+        margin: 5px;
+        padding: 10px;
+        .givenQn{
+            font: bolder;
+        }
+        .selectedAnswer{
+            padding: 5px;
+        }
+        .correctAnswer{
+            padding: 5px;
+        }
+    }
+}
+.correct{
+    border: #3bc277 solid 2px;
+    background: #f5f9f5;
+}
+.wrong{
+    border: #eea9a9 solid 2px;
+    background: #ffe8e8;
 }
