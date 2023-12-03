@@ -1,0 +1,9 @@
+<input id="serachId" onkeyup={{action "triggerSearch"}} >
+{{#unless this.isSearhed}}
+{{#each this.storage.apiData.Topics as |data|}}
+    <div class="recomendOption">{{data}}</div>
+{{/each}}
+{{/unless}}
+<QuizComp/>
+<ShowData/>
+{{yield}}
