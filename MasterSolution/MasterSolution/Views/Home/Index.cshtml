@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <!--<p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
+    <div class="content"></div>
+</div>
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/api/start',
+            type: 'GET',
+            success: function (data) {
+                $('.text-center div').html(data);
+            },
+            error: function (error) {
+                console.error('API Error:', error);
+            }
+        });
+    });
+</script>
+

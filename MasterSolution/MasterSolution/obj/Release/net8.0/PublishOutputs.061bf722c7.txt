@@ -1,0 +1,7 @@
+C:\Users\pprav\source\repos\MasterSolution\MasterSolution\obj\Release\net8.0\PubTmp\Out\MasterSolution.exe
+C:\Users\pprav\source\repos\MasterSolution\MasterSolution\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\pprav\source\repos\MasterSolution\MasterSolution\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\pprav\source\repos\MasterSolution\MasterSolution\obj\Release\net8.0\PubTmp\Out\MasterSolution.dll
+C:\Users\pprav\source\repos\MasterSolution\MasterSolution\obj\Release\net8.0\PubTmp\Out\MasterSolution.deps.json
+C:\Users\pprav\source\repos\MasterSolution\MasterSolution\obj\Release\net8.0\PubTmp\Out\MasterSolution.runtimeconfig.json
+C:\Users\pprav\source\repos\MasterSolution\MasterSolution\obj\Release\net8.0\PubTmp\Out\MasterSolution.pdb
