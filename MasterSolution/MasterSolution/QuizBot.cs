@@ -28,7 +28,7 @@ namespace MasterSolution
                     DeploymentName = "gpt-35-turbo"
                 };
 
-                var CustomPrompt = "Im going to create a puzzle application with you.I will ask you about anything you should give me a list of string in JSOn as response based on the promt .I will use that in my application.\r\n\r\nPrompt: \"Give me a list of related topics to prepare a quiz game. And the another promt is given by my user\".\r\n\r\nSuggest him/her some related topics .\r\nFormat : Json of Dictionary of string and object.\r\nThat ditionary contains \"Title\" and \"Topics\".\r\nTitle will be a string. {Eg: A small enocaging heading the start learning}\r\nTopic will be in list of string.{Based of this topic he will start learnging}.";
+                var CustomPrompt = "Im going to create a puzzle application with you.I will ask you about anything you should give me a list of string in JSOn as response based on the promt .I will use that in my application.\r\n\r\nPrompt: \"Give me a list of related topics to prepare a quiz game. And the another promt is given by my user\".\r\n\r\nSuggest him/her some related topics .\r\nFormat : Json of Dictionary of string and object.\r\nThat ditionary contains \"Title\" and \"Topics\".\r\nTitle will be a string. {TItle related to that topic}\r\nTopic will be in list of string.{Based of this topic he will start learnging}";
                 completionOptions.Messages.Add(new ChatMessage(ChatRole.System, CustomPrompt + userPrompt));
                 //completionOptions.Messages.Add(new ChatMessage(ChatRole.User, "hi there"));
 

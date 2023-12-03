@@ -5,13 +5,13 @@ import { tracked } from '@glimmer/tracking';
 export default class StorageService extends Service {
   @tracked apiData = null;
 
-  async fetchData() {
-    const url = 'http://localhost:5130/api/getGameData/';
+  async fetchData(url, data) {
+    // const url = 'http://localhost:5130/api/getGameData/';
 
     return $.ajax({
       url: url,
       method: 'GET',
-      data: 'selectedTopic=i wanted to learn .net',
+      data: data,
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': 'http://localhost:4200', // Include the origin of your Ember app
