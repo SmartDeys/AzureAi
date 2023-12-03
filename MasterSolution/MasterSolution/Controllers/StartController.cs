@@ -1,5 +1,8 @@
 ﻿using MasterSolution.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using System.Web.Http.Cors;
+
 
 namespace MasterSolution.Controllers
 {
